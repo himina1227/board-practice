@@ -9,7 +9,7 @@ public class CommonController {
     // merge test
     @RequestMapping("/")
     public String hello() {
-        return "helloTest1";
+        return "helloTest11";
     }
 
     @RequestMapping("/index")
