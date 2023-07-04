@@ -8,7 +8,7 @@ public class CommonController {
 
     // merge test
     @RequestMapping("/")
-    public String hello2() {
+    public String hello1() {
         return "hello2";
     }
 
