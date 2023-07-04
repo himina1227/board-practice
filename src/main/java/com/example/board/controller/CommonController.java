@@ -17,8 +17,8 @@ public class CommonController {
         return "index";
     }
 
-    @RequestMapping("/test2")
+    @RequestMapping("/test3")
     public String test() {
-        return "test2";
+        return "test3";
     }
 }
