@@ -2,7 +2,7 @@ package com.example.board.controller;
 
 public class TestController {
 
-    public void test11() {
+    public void test2() {
 
     }
 }
