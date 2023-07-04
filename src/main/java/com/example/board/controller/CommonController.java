@@ -12,8 +12,8 @@ public class CommonController {
         return "hello";
     }
 
-    @RequestMapping("/test")
+    @RequestMapping("/test1")
     public String test() {
-        return "test";
+        return "test1";
     }
 }
