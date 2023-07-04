@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CommonController {
 
     // merge test
-    @RequestMapping("/1")
+    @RequestMapping("/21")
     public String hello() {
         return "helloTest11";
     }
