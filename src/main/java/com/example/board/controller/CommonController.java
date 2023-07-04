@@ -10,9 +10,4 @@ public class CommonController {
     public String hello() {
         return "hello";
     }
-
-    @RequestMapping("/revert")
-    public String revert() {
-        return "revert test";
-    }
 }
