@@ -63,9 +63,8 @@ public class Article {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Article article = (Article) o;
-        return Objects.equals(id, article.id);
+        if (!(o instanceof Article article)) return false;
+        return id != null && id.equals(article.id);
     }
 
     @Override
