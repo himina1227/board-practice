@@ -1,0 +1,42 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: board
+  profiles:
+    active: local #prod #devel
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/board?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
+    username: himina
+    password: test123!@#
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 3
+jpa:
+  hibernate:
+    ddl-auto: create
+  database-platform: org.hibernate.dialect.MariaDB106Dialect
+  properties:
+    hibernate:
+      show_sql: true
+      format_sql: true
+      default_batch_fetch_size: 100
+  open-in-view: false
+  defer-datasource-initialization: true # data.sql파일로 initialize 초기화 시키기 위해
+debug: false
+---
+
+spring:
+  config:
+    activate:
+      on-profile: test
+    datasource:
+      url: jdbc:h2:mem:board;mode=mysql
+      driverClassName: org.h2.Driver
+    sql:
+      init:
+        mode: always
+    test:
+      database:
+        replace: none
