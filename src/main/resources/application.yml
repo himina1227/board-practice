@@ -15,7 +15,7 @@ spring:
       minimum-idle: 3
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
     database-platform: org.hibernate.dialect.MariaDB106Dialect
     properties:
       hibernate:
