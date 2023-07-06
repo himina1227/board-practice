@@ -1,0 +1,65 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: board
+  profiles:
+    active: local #prod #devel
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/board?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
+    username: himina
+    password: test123!@#
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 3
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.MariaDB106Dialect
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 100
+    open-in-view: false
+    defer-datasource-initialization: true # data.sql 파일로 initialize 초기화 시키기 위해
+#debug: false 모든 종단점의 로그들을 보고 싶지 않을때
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:mem:board;MODE=MYSQL
+      username: sa
+      password:
+      driver-class-name: org.h2.Driver
+  sql:
+    init:
+      mode: always
+  test:
+    database:
+      replace: none
