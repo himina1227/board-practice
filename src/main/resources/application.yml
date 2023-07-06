@@ -13,18 +13,18 @@ spring:
     hikari:
       maximum-pool-size: 5
       minimum-idle: 3
-jpa:
-  hibernate:
-    ddl-auto: create
-  database-platform: org.hibernate.dialect.MariaDB106Dialect
-  properties:
+  jpa:
     hibernate:
-      show_sql: true
-      format_sql: true
-      default_batch_fetch_size: 100
-  open-in-view: false
-  defer-datasource-initialization: true # data.sql 파일로 initialize 초기화 시키기 위해
-debug: false
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.MariaDB106Dialect
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 100
+    open-in-view: false
+    defer-datasource-initialization: true # data.sql 파일로 initialize 초기화 시키기 위해
+#debug: false 모든 종단점의 로그들을 보고 싶지 않을때
 ---
 spring:
   config:
