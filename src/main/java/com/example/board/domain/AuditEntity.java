@@ -26,7 +26,7 @@ public class AuditEntity {
 
     @CreatedBy
     @Column(nullable = false, length = 100)
-    private String createdBy;
+    protected String createdBy;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @LastModifiedDate
@@ -34,5 +34,5 @@ public class AuditEntity {
 
     @LastModifiedBy
     @Column(nullable = false, length = 100)
-    private String modifiedBy;
+    protected String modifiedBy;
 }
