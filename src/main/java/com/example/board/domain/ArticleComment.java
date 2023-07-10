@@ -36,6 +36,10 @@ public class ArticleComment extends AuditEntity {
     @Column(nullable = false, length = 500)
     private String content;
 
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_account_id", foreignKey = @ForeignKey(name = "article_comment_article"))
+    private UserAccount userAccount;
+
     private ArticleComment(Article article, String content) {
         this.article = article;
         this.content = content;
