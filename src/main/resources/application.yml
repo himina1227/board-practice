@@ -29,6 +29,11 @@ spring:
     rest:
       base-path: /api
       detection-strategy: annotated
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+      location: /Users/himina1227
 #debug: false 모든 종단점의 로그들을 보고 싶지 않을때
 ---
 spring:
